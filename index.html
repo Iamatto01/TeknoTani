@@ -1,399 +1,136 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!--
+  Teknotani Home Page
+
+  This is the landing page for Teknotani, a fictional Malaysian agriculture
+  marketplace.  It introduces visitors to the brand, highlights the main
+  product categories (tanaman, hasil tanaman, benih, dan lain‑lain) and
+  presents a simple carousel to showcase each category.  The page uses
+  external CSS and JavaScript files for styling and interactivity.
+-->
+<html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroSmart Solutions | Pertanian Pintar</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
-
-    <script>
-        // Custom Tailwind configuration
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'primary-green': '#388E3C',
-                        'secondary-green': '#689F38',
-                        'light-green': '#DCEDC8',
-                        'bg-light': '#F1F8E9',
-                        'dark-text': '#212121',
-                        'light-text': '#757575',
-                    },
-                    backgroundImage: {
-                        'hero-pattern': "url('https://images.pexels.com/photos/326231/pexels-photo-326231.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Simple animation for elements revealing on scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teknotani | Teknologi Pertanian untuk Masa Depan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-dark-text font-sans antialiased">
+<body>
+  <!-- Navigation bar at the top of the page -->
+  <nav>
+    <div class="logo">
+      <img src="ChatGPT Image Sep 2, 2025, 10_58_02 PM.png" alt="Teknotani Logo" style="height:48px; vertical-align:middle;">
+    </div>
+    <ul>
+      <li><a href="index.html">Laman Utama</a></li>
+      <li><a href="beli.html">Beli</a></li>
+      <li><a href="jual.html">Jual</a></li>
+      <li><a href="ai.html">AI</a></li>
+      <li><a href="login.html">Log Masuk</a></li>
+    </ul>
+  </nav>
 
-    <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-primary-green flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                </svg>
-                AgroSmart
-            </a>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-gray-600 hover:text-primary-green transition duration-300">Tentang Kami</a>
-                <a href="#services" class="text-gray-600 hover:text-primary-green transition duration-300">Perkhidmatan</a>
-                <a href="#how-it-works" class="text-gray-600 hover:text-primary-green transition duration-300">Cara Kerja</a>
-                <a href="#ai-advisor" class="text-gray-600 hover:text-primary-green transition duration-300">Penasihat AI</a>
-                <a href="#contact" class="bg-primary-green text-white px-5 py-2 rounded-full hover:bg-secondary-green transition duration-300 shadow-md">Hubungi Kami</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden text-primary-green">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+  <!-- Hero banner introduces the company and invites users to start shopping -->
+  <section class="hero">
+    <div class="video-background">
+      <video playsinline autoplay muted loop>
+        <source src="Farm_Scenery_Video_Generated.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-content">
+      <h1>Selamat Datang ke Teknotani</h1>
+      <p>Membawa teknologi pertanian moden kepada komuniti tempatan. Cari tanaman, hasil tanaman, benih dan pelbagai produk berkaitan pertanian.</p>
+      <a href="beli.html" class="cta-btn">Mula Membeli</a>
+    </div>
+  </section>
+
+  <!-- Carousel with slides for each main category -->
+  <div class="carousel">
+    <div class="slides">
+      <!-- Slide 1: Tanaman -->
+      <div class="slide">
+  <i class="fas fa-seedling fa-4x" title="Tanaman"></i>
+        <div class="content">
+          <h2>Tanaman</h2>
+          <p>Pelbagai jenis tanaman segar seperti pokok hiasan, herba dan pokok buah.</p>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-            <a href="#about" class="block text-gray-600 hover:text-primary-green transition duration-300">Tentang Kami</a>
-            <a href="#services" class="block text-gray-600 hover:text-primary-green transition duration-300">Perkhidmatan</a>
-            <a href="#how-it-works" class="block text-gray-600 hover:text-primary-green transition duration-300">Cara Kerja</a>
-            <a href="#ai-advisor" class="block text-gray-600 hover:text-primary-green transition duration-300">Penasihat AI</a>
-            <a href="#contact" class="block bg-primary-green text-white text-center mt-2 px-5 py-2 rounded-full hover:bg-secondary-green transition duration-300 shadow-md">Hubungi Kami</a>
+      </div>
+      <!-- Slide 2: Hasil Tanaman -->
+      <div class="slide">
+  <i class="fas fa-leaf fa-4x" title="Hasil Tanaman"></i>
+        <div class="content">
+          <h2>Hasil Tanaman</h2>
+          <p>Belanja buah‑buahan dan sayur‑sayuran segar terus dari ladang tempatan.</p>
         </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="relative h-screen flex items-center justify-center text-white text-center bg-hero-pattern bg-cover bg-center">
-            <div class="absolute inset-0 bg-black/50 z-10"></div>
-            <div class="relative z-20 px-6 reveal">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight tracking-tight text-shadow">Pertanian Pintar untuk Masa Depan</h1>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto font-light text-shadow-sm">Mengubah pertanian dengan teknologi pintar yang lestari.</p>
-                <a href="#services" class="mt-8 inline-block bg-secondary-green text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-primary-green transform hover:scale-105 transition duration-300 shadow-lg">Ketahui Lebih Lanjut</a>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section id="about" class="py-20 bg-bg-light">
-            <div class="container mx-auto px-6 text-center reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-4">Tentang AgroSmart Solutions</h2>
-                <p class="max-w-3xl mx-auto text-light-text text-lg">
-                    Kami komited untuk merevolusikan pertanian melalui penyelesaian pertanian pintar, lestari dan dipacu data. Kami memperkasa petani untuk meningkatkan kecekapan, mengurangkan sisa, dan mencapai hasil yang lebih tinggi untuk masa depan yang lebih makmur.
-                </p>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary-green mb-12 reveal">Perkhidmatan Kami</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Feature Card 1 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal">
-                        <div class="bg-light-green h-16 w-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-secondary-green mb-3">Pengairan Pintar</h3>
-                        <p class="text-light-text">Sistem berkuasa AI menghantar air tepat pada masanya, meminimumkan sisa dan memaksimumkan pertumbuhan tanaman.</p>
-                    </div>
-                    <!-- Feature Card 2 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal" style="transition-delay: 150ms;">
-                        <div class="bg-light-green h-16 w-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-secondary-green mb-3">Pertanian Ketepatan</h3>
-                        <p class="text-light-text">Gunakan data dron dan penderia untuk memantau kesihatan tanah, nutrien, dan pertumbuhan tanaman secara terperinci.</p>
-                    </div>
-                    <!-- Feature Card 3 -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal" style="transition-delay: 300ms;">
-                        <div class="bg-light-green h-16 w-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-secondary-green mb-3">Pemantauan IoT</h3>
-                        <p class="text-light-text">Dapatkan cerapan masa nyata tentang keadaan tanah, iklim, dan tanaman terus dari telefon pintar anda.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="py-20 bg-bg-light">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary-green text-center mb-12 reveal">Bagaimana Ia Berfungsi?</h2>
-                <div class="space-y-12">
-                    <!-- Step 1 -->
-                    <div class="flex flex-col md:flex-row items-center gap-8 reveal">
-                        <div class="md:w-1/2">
-                            <h3 class="text-2xl font-bold text-secondary-green mb-3">1. Pengumpulan Data Pintar</h3>
-                            <p class="text-light-text">Penderia IoT dan dron canggih kami mengumpul data masa nyata dari ladang anda—termasuk kelembapan tanah, tahap nutrien, dan kesihatan tanaman. Data ini dihantar secara selamat ke platform awan kami.</p>
-                        </div>
-                        <div class="md:w-1/2">
-                            <img src="https://placehold.co/600x400/DCEDC8/388E3C?text=Data+Collection" alt="Pengumpulan Data" class="rounded-lg shadow-lg w-full h-auto" onerror="this.onerror=null;this.src='https://placehold.co/600x400/DCEDC8/388E3C?text=Image+Error';">
-                        </div>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 reveal">
-                        <div class="md:w-1/2">
-                            <h3 class="text-2xl font-bold text-secondary-green mb-3">2. Analisis Berkuasa AI</h3>
-                            <p class="text-light-text">Algoritma AI kami menganalisis data yang dikumpul, membandingkannya dengan model tanaman dan ramalan cuaca. Ia menjana cerapan yang boleh diambil tindakan dan ramalan untuk mengoptimumkan sumber dan hasil tanaman.</p>
-                        </div>
-                        <div class="md:w-1/2">
-                            <img src="https://placehold.co/600x400/A5D6A7/388E3C?text=AI+Analysis" alt="Analisis AI" class="rounded-lg shadow-lg w-full h-auto" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A5D6A7/388E3C?text=Image+Error';">
-                        </div>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="flex flex-col md:flex-row items-center gap-8 reveal">
-                        <div class="md:w-1/2">
-                            <h3 class="text-2xl font-bold text-secondary-green mb-3">3. Tindakan Automatik & Laporan</h3>
-                            <p class="text-light-text">Berdasarkan analisis, sistem kami boleh mengautomasikan tugas seperti pengairan. Anda menerima laporan terperinci dan amaran pada aplikasi mudah alih kami, membolehkan anda membuat keputusan termaklum dari mana-mana sahaja.</p>
-                        </div>
-                        <div class="md:w-1/2">
-                            <img src="https://placehold.co/600x400/C8E6C9/388E3C?text=Automation" alt="Automasi" class="rounded-lg shadow-lg w-full h-auto" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C8E6C9/388E3C?text=Image+Error';">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Advisor Section -->
-        <section id="ai-advisor" class="py-20">
-            <div class="container mx-auto px-6 reveal">
-                <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-2xl">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-primary-green">Penasihat Pertanian AI Kami ✨</h2>
-                        <p class="text-light-text mt-2">Dapatkan nasihat pakar segera untuk tanaman anda.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <textarea id="user-query" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green focus:border-transparent transition duration-300" rows="4" placeholder="Contoh: Mengapa daun tomato saya menjadi kuning?"></textarea>
-                        
-                        <label for="image-upload" class="w-full flex items-center justify-center px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
-                            <span id="upload-text" class="text-gray-500">Muat Naik Imej (Pilihan)</span>
-                        </label>
-                        <input type="file" id="image-upload" accept="image/*" class="hidden">
-
-                        <div class="flex justify-end items-center pt-2">
-                             <button id="ask-advisor-btn" class="flex items-center justify-center bg-primary-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-secondary-green transition duration-300 shadow-md w-full md:w-auto">
-                                <span id="btn-text">Tanya Penasihat</span>
-                                <div id="ai-advisor-loader" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin ml-2"></div>
-                            </button>
-                        </div>
-                    </div>
-                    <div id="advisor-response-container" class="mt-6 hidden">
-                        <h4 class="font-bold text-lg text-dark-text mb-2">Jawapan Penasihat:</h4>
-                        <div id="advisor-response" class="bg-bg-light p-4 rounded-lg border border-gray-200 min-h-[100px] whitespace-pre-wrap text-dark-text"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-secondary-green text-white">
-            <div class="container mx-auto px-6 text-center reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h2>
-                <p class="max-w-2xl mx-auto mb-10">Ada soalan? Kami sedia membantu anda memulakan perjalanan pertanian pintar.</p>
-                <form class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg text-left text-dark-text">
-                    <div class="mb-4">
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
-                        <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mel</label>
-                        <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green" required>
-                    </div>
-                    <div class="mb-6">
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mesej</label>
-                        <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-green" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-primary-green text-white py-3 px-6 rounded-lg font-semibold hover:bg-secondary-green transition duration-300 shadow-md">Hantar Mesej</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-primary-green text-light-green">
-        <div class="container mx-auto px-6 py-10 text-center">
-            <p>&copy; 2025 AgroSmart Solutions. Hak Cipta Terpelihara.</p>
-            <p class="mt-2 text-sm">Ikuti kami: <a href="#" class="hover:text-white">Facebook</a> | <a href="#" class="hover:text-white">Instagram</a> | <a href="#" class="hover:text-white">Twitter</a></p>
+      </div>
+      <!-- Slide 3: Benih -->
+      <div class="slide">
+  <i class="fas fa-egg fa-4x" title="Benih"></i>
+        <div class="content">
+          <h2>Benih</h2>
+          <p>Pilih benih berkualiti untuk memulakan kebun anda sendiri di rumah.</p>
         </div>
-    </footer>
+      </div>
+      <!-- Slide 4: Produk Lain -->
+      <div class="slide">
+  <i class="fas fa-box fa-4x" title="Produk Lain"></i>
+        <div class="content">
+          <h2>Produk Lain</h2>
+          <p>Temui produk berasaskan tanaman, kit terrarium, langganan dan banyak lagi.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel indicators for manual navigation -->
+    <div class="indicators">
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+  </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Mobile Menu Toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+  <!-- Highlight some popular categories with cards -->
+  <section class="section">
+    <h2>Kategori Popular</h2>
+    <div class="card-grid">
+      <div class="card">
+  <i class="fas fa-seedling fa-3x" title="Tanaman"></i>
+        <h3>Tanaman</h3>
+        <p>Cari pelbagai jenis tanaman hidup untuk ruang anda.</p>
+        <a href="beli.html#tanaman" class="button">Lihat</a>
+      </div>
+      <div class="card">
+  <i class="fas fa-leaf fa-3x" title="Hasil Tanaman"></i>
+        <h3>Hasil Tanaman</h3>
+        <p>Sayur‑sayuran dan buah‑buahan segar terus dari ladang.</p>
+        <a href="beli.html#hasil" class="button">Lihat</a>
+      </div>
+      <div class="card">
+  <i class="fas fa-egg fa-3x" title="Benih"></i>
+        <h3>Benih</h3>
+        <p>Benih berkualiti untuk memulakan kebun anda sendiri.</p>
+        <a href="beli.html#benih" class="button">Lihat</a>
+      </div>
+      <div class="card">
+  <i class="fas fa-box fa-3x" title="Produk Lain"></i>
+        <h3>Produk Lain</h3>
+        <p>Kit terrarium, langganan dan perkhidmatan pertanian.</p>
+        <a href="beli.html#produk" class="button">Lihat</a>
+      </div>
+    </div>
+  </section>
 
-            // AI Advisor Logic
-            const askBtn = document.getElementById('ask-advisor-btn');
-            const btnText = document.getElementById('btn-text');
-            const userQueryInput = document.getElementById('user-query');
-            const imageUploadInput = document.getElementById('image-upload');
-            const uploadText = document.getElementById('upload-text');
-            const responseContainer = document.getElementById('advisor-response-container');
-            const responseDiv = document.getElementById('advisor-response');
-            const loaderDiv = document.getElementById('ai-advisor-loader');
+  <!-- Footer with copyright information -->
+  <footer class="footer">
+    &copy; 2025 Teknotani. Semua hak cipta terpelihara.
+  </footer>
 
-            // Update file upload text
-            imageUploadInput.addEventListener('change', () => {
-                if (imageUploadInput.files.length > 0) {
-                    uploadText.textContent = imageUploadInput.files[0].name;
-                    uploadText.classList.add('text-primary-green');
-                } else {
-                    uploadText.textContent = 'Muat Naik Imej (Pilihan)';
-                    uploadText.classList.remove('text-primary-green');
-                }
-            });
-
-            // Function to handle the API call
-            async function askGemini() {
-                const userQuery = userQueryInput.value.trim();
-                const imageFile = imageUploadInput.files[0];
-
-                if (!userQuery && !imageFile) {
-                    // Simple modal for alerts
-                    showModal('Sila masukkan soalan atau muat naik imej.');
-                    return;
-                }
-
-                // Show loading state
-                loaderDiv.classList.remove('hidden');
-                btnText.textContent = 'Memproses...';
-                askBtn.disabled = true;
-                responseContainer.classList.add('hidden');
-
-                let base64Image = null;
-                let mimeType = null;
-                if (imageFile) {
-                    try {
-                        base64Image = await new Promise((resolve, reject) => {
-                            const reader = new FileReader();
-                            reader.onload = () => resolve(reader.result.split(',')[1]);
-                            reader.onerror = error => reject(error);
-                            reader.readAsDataURL(imageFile);
-                        });
-                        mimeType = imageFile.type;
-                    } catch (error) {
-                        console.error('Error reading file:', error);
-                        responseDiv.innerHTML = `<p class="text-red-600">Ralat memuat naik imej. Sila cuba lagi.</p>`;
-                        resetButtonState();
-                        return;
-                    }
-                }
-
-                const systemInstruction = {
-                    parts: [{ text: "Anda adalah penasihat pertanian dan agronomis profesional. Tugas anda adalah untuk memberikan nasihat yang jelas, terperinci, dan berguna kepada petani berdasarkan soalan dan imej mereka. Berikan jawapan dalam Bahasa Melayu. Formatkan jawapan anda dengan baik menggunakan tajuk, senarai, dan perenggan yang sesuai untuk kebolehbacaan." }]
-                };
-
-                const contents = [{
-                    role: "user",
-                    parts: [
-                        { text: userQuery || "Sila analisis imej ini dan berikan nasihat." }
-                    ]
-                }];
-                
-                if (base64Image) {
-                    contents[0].parts.push({
-                        inlineData: { mimeType, data: base64Image }
-                    });
-                }
-
-                const payload = { contents, systemInstruction };
-                const apiUrl = `https://generativelaceholder.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=`; // NOTE: API key is handled by the environment
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    
-                    if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(`API Error: ${response.status} - ${JSON.stringify(errorData.error.message)}`);
-                    }
-
-                    const result = await response.json();
-                    const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || 'Maaf, tiada jawapan yang dapat dijana.';
-                    
-                    responseDiv.innerHTML = text.replace(/\n/g, '<br>'); // Simple formatting
-                    responseContainer.classList.remove('hidden');
-
-                } catch (error) {
-                    console.error('Error fetching from Gemini API:', error);
-                    responseDiv.innerHTML = `<p class="text-red-600">Terdapat ralat. Sila cuba lagi. (${error.message})</p>`;
-                    responseContainer.classList.remove('hidden');
-                } finally {
-                    resetButtonState();
-                }
-            }
-
-            function resetButtonState() {
-                loaderDiv.classList.add('hidden');
-                btnText.textContent = 'Tanya Penasihat';
-                askBtn.disabled = false;
-            }
-
-            askBtn.addEventListener('click', askGemini);
-
-            // Scroll reveal animation
-            const revealElements = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            revealElements.forEach(el => {
-                observer.observe(el);
-            });
-
-            // Simple modal function to replace alert()
-            function showModal(message) {
-                const modal = document.createElement('div');
-                modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
-                modal.innerHTML = `
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-sm mx-4">
-                        <p class="mb-4">${message}</p>
-                        <button class="bg-primary-green text-white px-6 py-2 rounded-lg">OK</button>
-                    </div>
-                `;
-                document.body.appendChild(modal);
-                modal.querySelector('button').addEventListener('click', () => {
-                    document.body.removeChild(modal);
-                });
-            }
-        });
-    </script>
+  <!-- Include site-wide JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

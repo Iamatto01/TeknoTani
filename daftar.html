@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+  Teknotani Registration Page
+
+  New users can create an account on this page.  The form collects
+  basic personal details such as full name, email, desired username
+  and password.  At present it is a static demonstration and does not
+  process any data.
+-->
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Akaun | Teknotani</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">Teknotani</div>
+    <ul>
+      <li><a href="index.html">Laman Utama</a></li>
+      <li><a href="beli.html">Beli</a></li>
+      <li><a href="jual.html">Jual</a></li>
+      <li><a href="ai.html">AI</a></li>
+      <li><a href="login.html">Log Masuk</a></li>
+    </ul>
+  </nav>
+
+  <section class="section">
+    <div class="form-container">
+      <h2>Daftar Akaun</h2>
+      <form>
+        <div class="form-group">
+          <label for="fullname">Nama Penuh</label>
+          <input type="text" id="fullname" placeholder="Nama Penuh" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <label for="newusername">Nama Pengguna</label>
+          <input type="text" id="newusername" placeholder="Nama Pengguna" required>
+        </div>
+        <div class="form-group">
+          <label for="newpassword">Kata Laluan</label>
+          <input type="password" id="newpassword" placeholder="Kata Laluan" required>
+        </div>
+        <button type="submit">Daftar</button>
+      </form>
+      <p style="text-align:center; margin-top:15px;">Sudah mempunyai akaun? <a href="login.html">Log Masuk</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Teknotani. Semua hak cipta terpelihara.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

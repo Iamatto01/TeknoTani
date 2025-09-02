@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+  Teknotani Sell Page
+
+  This page provides a form that allows farmers and gardeners to list their
+  products for sale.  The form collects basic information such as product
+  name, category, price, quantity, description and an optional image.  This
+  is purely a user interface demonstration; the form does not actually
+  submit data to a server.
+-->
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jual Produk | Teknotani</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">Teknotani</div>
+    <ul>
+      <li><a href="index.html">Laman Utama</a></li>
+      <li><a href="beli.html">Beli</a></li>
+      <li><a href="jual.html">Jual</a></li>
+      <li><a href="ai.html">AI</a></li>
+      <li><a href="login.html">Log Masuk</a></li>
+    </ul>
+  </nav>
+
+  <section class="section">
+    <h2>Jual Produk Anda</h2>
+    <p style="text-align:center; max-width:600px; margin:0 auto 30px;">Isi maklumat di bawah untuk mula menjual tanaman, hasil tanaman, benih atau produk pertanian anda melalui Teknotani.</p>
+    <div class="form-container">
+      <h2>Borang Jualan</h2>
+      <form>
+        <div class="form-group">
+          <label for="product-name">Nama Produk</label>
+          <div class="input-icon">
+            <i class="fas fa-tag"></i>
+            <input type="text" id="product-name" placeholder="Contoh: Benih Bayam" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="category">Kategori</label>
+          <div class="input-icon">
+            <i class="fas fa-list"></i>
+            <select id="category">
+              <option>Tanaman</option>
+              <option>Hasil Tanaman</option>
+              <option>Benih</option>
+              <option>Kit Terrarium</option>
+              <option>Langganan</option>
+              <option>Perkhidmatan</option>
+              <option>Produk Berasaskan Tanaman</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="price">Harga (RM)</label>
+          <div class="input-icon">
+            <i class="fas fa-money-bill-wave"></i>
+            <input type="number" id="price" placeholder="0.00" step="0.01" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Kuantiti</label>
+          <div class="input-icon">
+            <i class="fas fa-sort-numeric-up"></i>
+            <input type="number" id="quantity" placeholder="1" min="1">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Penerangan</label>
+          <div class="input-icon">
+            <i class="fas fa-align-left"></i>
+            <textarea id="description" placeholder="Huraikan produk anda..."></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="image">Gambar Produk</label>
+          <div class="input-icon file-input-wrapper">
+            <i class="fas fa-image"></i>
+            <input type="file" id="image" accept="image/*">
+            <span class="file-label">Seret & lepaskan gambar di sini atau klik untuk pilih</span>
+          </div>
+        </div>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Hantar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Teknotani. Semua hak cipta terpelihara.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
